@@ -8,6 +8,17 @@ struct Node {
     Node *next;
 };
 
+
+
+// Function prototypes
+
+void addFront(Node *&head, float value);
+void addTail(Node *&head, float value);
+void deleteNode(Node *&head, int position);
+void insertNode(Node *&head, int position, float value);
+void deleteList(Node *&head);
+void output(Node *hd);
+
 void output(Node *);
 
 int main() {
@@ -181,16 +192,3 @@ void deleteList(Node *&head) {
     head = nullptr;
 }
 
-void output(Node *head) {
-    if (!head) {
-        cout << "Empty list.\n";
-        return;
-    }
-    int count = 1;
-    Node *current = head;
-    while (current) {
-        cout << "[" << count++ << "] " << current->value << endl;
-        current = current->next;
-    }
-    cout << endl;
-}
