@@ -171,3 +171,26 @@ void insertNode(Node *&head, int position, float value) {
         head = newNode;
     }
 }
+void deleteList(Node *&head) {
+    Node *current = head;
+    while (current) {
+        Node *nextNode = current->next;
+        delete current;
+        current = nextNode;
+    }
+    head = nullptr;
+}
+
+void output(Node *head) {
+    if (!head) {
+        cout << "Empty list.\n";
+        return;
+    }
+    int count = 1;
+    Node *current = head;
+    while (current) {
+        cout << "[" << count++ << "] " << current->value << endl;
+        current = current->next;
+    }
+    cout << endl;
+}
