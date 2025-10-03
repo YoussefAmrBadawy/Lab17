@@ -112,3 +112,22 @@ void output(Node * hd) {
     }
     cout << endl;
 }
+
+void addFront(Node *&head, float value)
+{
+    Node *newNode = new Node{value, nullptr};
+    head = newNode;
+}
+
+void addTail(Node *&head, float value) {
+    Node *newNode = new Node{value, nullptr};
+    if (!head) {
+        head = newNode;
+        return;
+    }
+    Node *current = head;
+    while (current->next) {
+        current = current->next;
+    }
+    current->next = newNode;
+}
